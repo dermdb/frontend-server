@@ -1,0 +1,55 @@
+<h1>Account Creation</h1>
+<form id="create_account">
+    <div class="form-group">
+        <label for="gender" class="control-label">Gender</label>
+        <input type="text" class="form-control" id="gender" name="gender" value="" required="" title="Please enter you gender" placeholder="Male/Female">
+        <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+        <label for="eye_colour" class="control-label">Eye Colour</label>
+        <input type="text" class="form-control" id="eye_colour" name="eye_colour" value="" required="" title="Please enter you eye colour" placeholder="Blue">
+        <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+        <label for="skin_tone" class="control-label">Skin Tone</label>
+        <input type="text" class="form-control" id="skin_tone" name="skin_tone" value="" required="" title="Please enter you skin tone" placeholder="1">
+        <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+        <label for="country" class="control-label">Country</label>
+        <input type="text" class="form-control" id="country" name="country" value="" required="" title="Please enter you country of residence" placeholder="UK">
+        <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+        <label for="year" class="control-label">Year of Birth</label>
+        <input type="text" class="form-control" id="year" name="year" value="" required="" title="Please enter your year of birth" placeholder="1980">
+        <span class="help-block"></span>
+    </div>
+    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+    <button type="submit" class="btn btn-success btn-block">Create User Profile</button>
+</form>
+<br>
+<h3>Skin Tone Types</h3>
+<pre>Type I (scores 0–6) Pale white; blond or red hair; blue eyes; freckles — Always burns, never tans
+Type II (scores 7–13) White; fair; blond or red hair; blue, green, or hazel eyes — Usually burns, tans minimally
+Type III (scores 14–20) Cream white; fair with any hair or eye color; quite common — Sometimes mild burn, tans uniformly
+Type IV (scores 21–27) Moderate brown; typical Mediterranean skin tone — Rarely burns, always tans well
+Type V (scores 28–34) Dark brown; Middle Eastern skin types — Very rarely burns, tans very easily
+Type VI (scores 35–36) Deeply pigmented dark brown to black — Never burns, tans very easily</pre>
+<script>
+    $("#create_account").submit(function (event) {
+        event.preventDefault();
+        url = "/_/account";
+        Logger("info", "Account", "Submitting form...");
+        var data = {
+            gender: $('#gender').val(),
+            country: $('#country').val(),
+            year: $('#year').val(),
+            skin_tone: $('#skin_tone').val(),
+            eye_colour: $('#eye_colour').val()
+        };
+        var packet = JSON.stringify(data);
+        submit(packet, url);
+        return false;
+    });
+</script>

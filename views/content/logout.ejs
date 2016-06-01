@@ -1,0 +1,18 @@
+<form id="logout">
+    <button type="submit" class="btn btn-danger btn-block">Logout</button>
+</form>
+<script>
+    $("#logout").submit(function (event) {
+        event.preventDefault();
+        url = "/_/auth/logout";
+        Logger("info", "Login", "Submitting form...");
+        var data = {
+            email: $('#email').val(),
+            password: $('#password').val()
+        };
+        var method = "DELETE";
+        var packet = JSON.stringify(data);
+        submit(packet, url, method);
+        return false;
+    });
+</script>

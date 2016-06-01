@@ -1,0 +1,31 @@
+<h1>Submit A New Snapshot</h1>
+<form id="create_snapshot">
+    <div class="form-group">
+        <label for="description" class="control-label">Description</label>
+        <input type="text" class="form-control" id="description" name="description" value="" required=""
+               title="Please enter the description" placeholder="e.g. Turned Red">
+        <span class="help-block"></span>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Create New Snapshot</button>
+</form>
+<br>
+<script>
+    $("#create_snapshot").submit(function(event){
+        event.preventDefault();
+        Logger("info", "Snapshot", "Submitting form...");
+        var data = {
+            description: $('#description').val(),
+            pid: window.location.href.toString().split(window.location.host + "/snapshot/submit?id=")[1]
+        };
+        ajax(data, endpoints.SUBMIT_SNAPSHOT, function(err, packet){
+            console.log(packet);
+            if (typeof packet !== "undefined" && typeof packet.status !== "undefined" && packet.status === "ok"){
+                setTimeout(function() {
+                    window.location.reload();
+                }, 5000);
+            } else {
+                console.error(err);
+            }
+        });
+    });
+</script>

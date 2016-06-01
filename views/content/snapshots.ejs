@@ -1,0 +1,20 @@
+<button onclick="window.location.href='/snapshot/submit?id=<%= pid %>'" class="btn btn-primary btn-block">Add Snapshot</button>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for (var i in data) { %>
+    <tr>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].description %></td>
+        <td><%= data[i].date %></td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>

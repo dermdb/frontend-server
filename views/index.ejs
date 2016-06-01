@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include resources/head.ejs %>
+</head>
+<body>
+<% include resources/navbar.ejs %>
+<% include resources/scripts.ejs %>
+<script>
+    <% include resources/ajax.js %>
+</script>
+<div class="container">
+    <% if (page === "index"){ %>
+    <%          include content/index.ejs %>
+    <% } else if (page === "account"){ %>
+    <%          include content/account.ejs %>
+    <% } else if (page === "create"){ %>
+    <%          include content/create.ejs %>
+    <% } else if (page === "email"){ %>
+    <%          include content/email.ejs %>
+    <% } else if (page === "login"){ %>
+    <%          include content/login.ejs %>
+    <% } else if (page === "logout"){ %>
+    <%          include content/logout.ejs %>
+    <% } else if (page === "problem"){ %>
+    <%          include content/problem.ejs %>
+    <% } else if (page === "problems"){ %>
+    <%          include content/problems.ejs %>
+    <% } else if (page === "snapshot"){ %>
+    <%          include content/snapshot.ejs %>
+    <% } else if (page === "snapshots"){ %>
+    <%          include content/snapshots.ejs %>
+    <% }%>
+</div>
+</body>
+</html>
