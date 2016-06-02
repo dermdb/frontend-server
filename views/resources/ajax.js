@@ -80,6 +80,10 @@ var endpoints = {
         url: "/auth/login",
         method: "POST"
     },
+    "LOGOUT": {
+        url: "/auth/logout",
+        method: "DELETE"
+    },
     "CREATE_ACCOUNT": {
         url: "/auth/create",
         method: "POST"

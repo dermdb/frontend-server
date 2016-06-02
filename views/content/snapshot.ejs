@@ -21,7 +21,7 @@
             console.log(packet);
             if (typeof packet !== "undefined" && typeof packet.status !== "undefined" && packet.status === "ok"){
                 setTimeout(function() {
-                    window.location.reload();
+                    window.location = "/problems/" + data.pid;
                 }, 5000);
             } else {
                 console.error(err);
