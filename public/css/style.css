@@ -1,0 +1,23 @@
+.login
+{
+    background-color:#dddddd;
+    padding:20px;
+}
+.signup
+{
+    background-color:#dddddd;
+    padding:20px;
+}
+.btn{
+    width:100%;
+    border-radius: 0px;
+}
+.row-centered{
+    text-align:center;
+}
+.col-centered{
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
