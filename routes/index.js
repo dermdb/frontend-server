@@ -35,8 +35,12 @@ router.use(function(req, res, next){
     }
 });
 
-router.get("/account", function(req, res, next){
+router.get("/account/edit", function(req, res, next){
     res.render("index", {page: "account"});
+});
+
+router.get("/dashboard", function(req, res, next){
+    res.render("index", {page: "dashboard"});
 });
 
 router.get("/problems", function(req, res, next){

@@ -11,7 +11,7 @@ var router = express.Router();
 
 router.get('/create', function(req, res, next) {
     if (res.locals.user !== null) {
-        res.redirect("/account");
+        res.redirect("/dashboard");
     } else {
         res.render('index', {page: 'create'});
     }
@@ -23,7 +23,7 @@ router.get('/create', function(req, res, next) {
     }
 }).get('/login', function(req, res, next) {
     if (res.locals.user !== null) {
-        res.redirect("/account");
+        res.redirect("/dashboard");
     } else {
         res.render('index', {page: 'login'});
     }

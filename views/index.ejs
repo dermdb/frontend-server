@@ -13,7 +13,7 @@
     <% if (page === "index"){ %>
     <%          include content/index.ejs %>
     <% } else if (page === "account"){ %>
-    <%          include content/account.ejs %>
+    <%          include content/account_edit.ejs %>
     <% } else if (page === "create"){ %>
     <%          include content/create.ejs %>
     <% } else if (page === "email"){ %>
@@ -30,6 +30,8 @@
     <%          include content/snapshot.ejs %>
     <% } else if (page === "snapshots"){ %>
     <%          include content/snapshots.ejs %>
+    <% } else if (page === "dashboard"){ %>
+    <%          include content/dashboard.ejs %>
     <% }%>
 </div>
 </body>

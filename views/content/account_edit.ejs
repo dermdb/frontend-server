@@ -53,3 +53,27 @@ Type VI (scores 35–36) Deeply pigmented dark brown to black — Never burns, t
         return false;
     });
 </script>
+
+<script>
+    $("#signup_form").submit(function(event){
+        event.preventDefault();
+        var data = {
+            email: $("#_email").val(),
+            firstName: $("#first_name").val(),
+            lastName: $("#last_name").val(),
+            password: $("#_password").val(),
+            confirmPassword: $("#_password2").val()
+        }
+        ajax(data, endpoints.CREATE_ACCOUNT, function(err, packet){
+            if (typeof packet !== "undefined" && typeof packet.status !== "undefined" && packet.status === "ok"){
+                setTimeout(function() {
+                    window.location.reload();
+                }, 5000);
+            } else {
+                console.error(err);
+                $("#_password").val("");
+                $("#_password2").val("");
+            }
+        });
+    });
+</script>
