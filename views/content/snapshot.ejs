@@ -15,7 +15,7 @@
         Logger("info", "Snapshot", "Submitting form...");
         var data = {
             description: $('#description').val(),
-            pid: window.location.href.toString().split(window.location.host + "/snapshot/submit?id=")[1]
+            pid: window.location.href.toString().split(window.location.host + "/snapshots/submit?id=")[1]
         };
         ajax(data, endpoints.SUBMIT_SNAPSHOT, function(err, packet){
             console.log(packet);

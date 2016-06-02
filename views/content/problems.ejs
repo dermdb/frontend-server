@@ -1,4 +1,4 @@
-<button onclick="window.location.href='/problem/submit'" class="btn btn-info btn-block">New Problem</button>
+<button onclick="window.location.href='/problems/submit'" class="btn btn-info btn-block">New Problem</button>
 <br>
 <table class="table">
     <thead>
@@ -11,7 +11,7 @@
     <tbody>
     <% for (var i in data) { %>
     <tr>
-        <td><a href="/problem/<%= data[i].id %>"><%= data[i].id %></a></td>
+        <td><a href="/problems/<%= data[i].id %>"><%= data[i].id %></a></td>
         <td><%= data[i].type %></td>
         <td><%= data[i].description %></td>
     </tr>

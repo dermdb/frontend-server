@@ -47,9 +47,9 @@ router.get("/problems", function(req, res, next){
             res.render("index", {page:"problems", data:result});
         }
     })
-}).get("/problem/submit", function(req, res, next){
+}).get("/problems/submit", function(req, res, next){
     res.render("index", {page:"problem"});
-}).get("/problem/:id", function(req, res, next){
+}).get("/problems/:id", function(req, res, next){
     console.log(req.params.id);
     mysql.query("SELECT * FROM snapshots WHERE pid = " + mysql.escape(req.params.id) + " AND uid = " + mysql.escape(res.locals.user.id), function(err, result){
         if (err){
@@ -60,9 +60,9 @@ router.get("/problems", function(req, res, next){
     })
 });
 
-router.get("/snapshot/submit", function(req, res, next){
+router.get("/snapshots/submit", function(req, res, next){
     res.render("index", {page:"snapshot"});
-}).get("/snapshot/:id", function(req, res, next){
+}).get("/snapshots/:id", function(req, res, next){
     console.log(req.params.id);
     mysql.query("SELECT * FROM snapshots WHERE pid = " + req.params.id + " AND uid = " + res.locals.user.id, function(err, result){
         res.render("index", {page:"problem", data:result})
