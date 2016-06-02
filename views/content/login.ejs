@@ -1,20 +1,28 @@
-<h1>Login</h1>
-<form id="login_form">
-    <div class="form-group">
-        <label for="email" class="control-label">Email</label>
-        <input type="text" class="form-control" id="email" name="email" value="" required="" title="Please enter you email" placeholder="Email">
-        <span class="help-block"></span>
-    </div>
-    <div class="form-group">
-        <label for="password" class="control-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="Password">
-        <span class="help-block"></span>
-    </div>
-    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
-    <button type="submit" class="btn btn-success btn-block">Login</button>
-</form>
+
+<div class="container">
+    <div class=" row row-centered">
+        <h1>Login</h1>
+        <div class="login col-md-4 col-centered">
+            <form id="login_form">
+                <div class="form-group">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" value="" required="" title="Please enter you email" placeholder="Email">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="Password">
+                    <span class="help-block"></span>
+                </div>
+                <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                <button type="submit" class="btn btn-success btn-block">Login</button>
+            </form>
 <br>
-<button onclick="window.location.href='/auth/create'" class="btn btn-info btn-block">Sign Up</button>
+           <p align="center">Not registered?<a href='/auth/create'> Create an account</a></p>
+        </div>
+</div>
+</div>
+
 <script>
     $("#login_form").submit(function(event){
         event.preventDefault();
