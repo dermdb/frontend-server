@@ -43,6 +43,10 @@ router.get("/dashboard", function(req, res, next){
     res.render("index", {page: "dashboard"});
 });
 
+router.get("/images/submit", function(req, res, next){
+    res.render("index", {page: "images"});
+});
+
 router.get("/problems", function(req, res, next){
     mysql.query("SELECT * FROM problems WHERE uid = " + mysql.escape(res.locals.user.id), function(err, result){
         if (err){

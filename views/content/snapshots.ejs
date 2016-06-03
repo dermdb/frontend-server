@@ -11,7 +11,7 @@
     <tbody>
     <% for (var i in data) { %>
     <tr>
-        <td><%= data[i].id %></td>
+        <td><a href="/images/submit?sid=<%= data[i].id %>"><%= data[i].id %></a></td>
         <td><%= data[i].description %></td>
         <td><%= data[i].date %></td>
     </tr>

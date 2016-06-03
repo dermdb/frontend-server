@@ -1,0 +1,13 @@
+<form id        =  "uploadForm"
+      enctype   =  "multipart/form-data"
+      action    =  "/_/images"
+      method    =  "post"
+>
+
+    <input id="image" type="file" name="userPhoto" />
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+<script type="text/javascript">
+    document.getElementById("image").setAttribute("name", window.location.href.toString().split(window.location.host + "/images/submit?sid=")[1]);
+</script>
