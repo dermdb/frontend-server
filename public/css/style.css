@@ -38,11 +38,19 @@
 {
     background-color: #f5f5f5;
 }
-#description
+ #description
 {
     height:270px;
 }
-
+.snapshot
+{
+    background-color: #dddddd;
+    padding:20px;
+}
+.snapshot button
+{
+    width:30%;
+}
 .btn-profile
 {
     width:30%;

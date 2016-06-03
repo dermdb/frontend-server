@@ -1,14 +1,21 @@
-<h1>Submit A New Snapshot</h1>
-<form id="create_snapshot">
-    <div class="form-group">
-        <label for="description" class="control-label">Description</label>
-        <input type="text" class="form-control" id="description" name="description" value="" required=""
-               title="Please enter the description" placeholder="e.g. Turned Red">
-        <span class="help-block"></span>
+<div class="container">
+    <div class="row">
+        <h1>Submit A New Snapshot</h1>
+        <div class="snapshot col-md-12">
+            <form id="create_snapshot">
+                <div class="form-group">
+                    <label for="description" class="control-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" value="" required=""
+                           title="Please enter the description" placeholder="e.g. Turned Red"></textarea>
+                    <span class="help-block"></span>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Create New Snapshot</button>
+            </form>
+        </div>
+        <br>
     </div>
-    <button type="submit" class="btn btn-success btn-block">Create New Snapshot</button>
-</form>
-<br>
+</div>
+
 <script>
     $("#create_snapshot").submit(function(event){
         event.preventDefault();
